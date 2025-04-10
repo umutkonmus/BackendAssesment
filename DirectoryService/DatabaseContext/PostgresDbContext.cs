@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DirectoryService.DatabaseContext
 {
-    public class PostgresDbContext : DbContext
+    public sealed class PostgresDbContext : DbContext
     {
         public PostgresDbContext(DbContextOptions options) : base(options)
         {
