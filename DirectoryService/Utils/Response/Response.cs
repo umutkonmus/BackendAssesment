@@ -14,7 +14,7 @@
         }
         public static Response<T> Success(int status)
         {
-            return new Response<T> { Data = default(T), Status = status, IsSuccessful = true };
+            return new Response<T> {Status = status, IsSuccessful = true };
         }
 
         public static Response<T> Success(T data, string message, int status)
