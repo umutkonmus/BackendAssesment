@@ -1,5 +1,6 @@
 
 using DirectoryService.DatabaseContext;
+using DirectoryService.Mapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace DirectoryService
@@ -12,6 +13,8 @@ namespace DirectoryService
 
             builder.Services.AddDbContext<PostgresDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
