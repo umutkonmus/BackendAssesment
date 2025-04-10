@@ -1,6 +1,5 @@
 ﻿using DirectoryService.DTOs.Person;
 using DirectoryService.Services.Abstracts;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DirectoryService.Controllers
