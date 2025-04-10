@@ -5,6 +5,7 @@
         public T Data { get; set; }
         public int Status { get; set; }
         public bool IsSuccessful { get; set; }
+        public string Message { get; set; }
         public List<string>? Errors { get; set; }
 
         public static Response<T> Success(T data, int status)
@@ -14,6 +15,11 @@
         public static Response<T> Success(int status)
         {
             return new Response<T> { Data = default(T), Status = status, IsSuccessful = true };
+        }
+
+        public static Response<T> Success(T data, string message, int status)
+        {
+            return new Response<T> { Data = data, Message = message, Status = status, IsSuccessful = true };
         }
         public static Response<T> Fail(List<string> errors, int status)
         {
