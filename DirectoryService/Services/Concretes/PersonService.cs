@@ -56,6 +56,7 @@ namespace DirectoryService.Services.Concretes
         {
             var person = await _dbContext.Persons
                 .Include(x => x.ContactInfos)
+                .ThenInclude(x => x.Type)
                 .FirstOrDefaultAsync(x => x.ID == id);
             if (person == null)
                 return Response<PersonWithContactInfoDTO>.Success(new PersonWithContactInfoDTO(),"Person not found", 204);

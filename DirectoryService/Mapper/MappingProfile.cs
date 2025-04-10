@@ -18,6 +18,9 @@ namespace DirectoryService.Mapper
             #region ContactInfo
             CreateMap<ContactInfo, ContactInfoDTO>().ReverseMap();
             CreateMap<ContactInfo, CreateContactInfoDTO>().ReverseMap();
+            CreateMap<ContactInfo, ContactInfoForPersonDTO>()
+                .ForMember(dest => dest.TypeName, opt => opt.MapFrom(src => src.Type.Name))
+                .ReverseMap();
             #endregion
             #region ContactType
             CreateMap<ContactType, ContactTypeDTO>().ReverseMap();

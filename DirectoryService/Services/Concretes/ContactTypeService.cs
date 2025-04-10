@@ -45,7 +45,7 @@ namespace DirectoryService.Services.Concretes
                 return Response<List<ContactTypeDTO>>.Fail("No contact types found", (int)StatusCode.NotFound);
             if (!_contactTypes.Any())
                 return Response<List<ContactTypeDTO>>.Success(new List<ContactTypeDTO>(), (int)StatusCode.NoContent);
-            return Response<List<ContactTypeDTO>>.Success(_mapper.Map<List<ContactTypeDTO>>(_contactTypes), (int)StatusCode.Success);
+            return Response<List<ContactTypeDTO>>.Success(_mapper.Map<List<ContactTypeDTO>>(_contactTypes),(int)StatusCode.Success);
         }
     }
 }

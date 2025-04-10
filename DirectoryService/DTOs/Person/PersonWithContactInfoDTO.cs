@@ -1,4 +1,4 @@
-﻿using DirectoryService.Models;
+﻿using DirectoryService.DTOs.ContactInfo;
 
 namespace DirectoryService.DTOs.Person
 {
@@ -8,6 +8,6 @@ namespace DirectoryService.DTOs.Person
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string CompanyName { get; set; }
-        public List<Models.ContactInfo> ContactInfos { get; set; }
+        public List<ContactInfoForPersonDTO> ContactInfos { get; set; }
     }
 }
