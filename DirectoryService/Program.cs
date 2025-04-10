@@ -1,6 +1,8 @@
 
 using DirectoryService.DatabaseContext;
 using DirectoryService.Mapper;
+using DirectoryService.Services.Abstracts;
+using DirectoryService.Services.Concretes;
 using Microsoft.EntityFrameworkCore;
 
 namespace DirectoryService
@@ -10,6 +12,10 @@ namespace DirectoryService
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddScoped<IPersonService, PersonService>();
+            builder.Services.AddScoped<IContactTypeService, ContactTypeService>();
+            builder.Services.AddScoped<IContactInfoService, ContactInfoService>();
 
             builder.Services.AddDbContext<PostgresDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
