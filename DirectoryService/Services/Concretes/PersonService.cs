@@ -36,7 +36,7 @@ namespace DirectoryService.Services.Concretes
             }
             _dbContext.Persons.Remove(_person);
             await _dbContext.SaveChangesAsync();
-            return Response<bool>.Success(200);
+            return Response<bool>.Success((int)StatusCode.Success);
         }
 
         public async Task<Response<List<PersonDTO>>> GetAllPersonsAsync()
