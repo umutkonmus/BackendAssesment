@@ -30,7 +30,7 @@ namespace DirectoryService.Services.Concretes
         public async Task<Response<bool>> DeleteContactTypeAsync(Guid id)
         {
             var _contactType = _dbContext.ContactTypes.FirstOrDefault(x => x.ID == id);
-            if (_contactType != null)
+            if (_contactType == null)
                 return Response<bool>.Fail("Contact type not found", (int)StatusCode.NotFound);
 
             _dbContext.ContactTypes.Remove(_contactType);
