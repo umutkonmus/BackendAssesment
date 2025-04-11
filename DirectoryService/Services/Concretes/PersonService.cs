@@ -5,7 +5,6 @@ using DirectoryService.Models;
 using DirectoryService.Services.Abstracts;
 using DirectoryService.Utils.Response;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.InteropServices.Swift;
 
 namespace DirectoryService.Services.Concretes
 {

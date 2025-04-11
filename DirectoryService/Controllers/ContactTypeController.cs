@@ -1,5 +1,4 @@
-﻿using DirectoryService.DTOs.ContactInfo;
-using DirectoryService.DTOs.ContactType;
+﻿using DirectoryService.DTOs.ContactType;
 using DirectoryService.Services.Abstracts;
 using Microsoft.AspNetCore.Mvc;
 
