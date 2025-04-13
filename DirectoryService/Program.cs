@@ -16,7 +16,7 @@ namespace DirectoryService
             builder.Services.AddScoped<IPersonService, PersonService>();
             builder.Services.AddScoped<IContactTypeService, ContactTypeService>();
             builder.Services.AddScoped<IContactInfoService, ContactInfoService>();
-            builder.Services.AddSingleton<KafkaProducerService>();
+            builder.Services.AddSingleton<IKafkaProducerService,KafkaProducerService>();
 
             builder.Services.AddDbContext<PostgresDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
