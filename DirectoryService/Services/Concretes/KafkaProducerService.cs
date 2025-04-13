@@ -12,7 +12,10 @@ namespace DirectoryService.Services.Concretes
 
         public KafkaProducerService()
         {
-            var config = new ProducerConfig { BootstrapServers = "localhost:9092" };
+            var config = new ProducerConfig {
+                BootstrapServers = "kafka:9092",
+                AllowAutoCreateTopics = true,
+            };
             _producer = new ProducerBuilder<Null, string>(config).Build();
         }
         public async Task SendReportRequestAsync(ReportRequestDTO dto)
