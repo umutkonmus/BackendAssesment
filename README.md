@@ -50,9 +50,8 @@ This request does not require a request body.
 -   `message` (string): A message related to the response.
     
 -   `errors` (array): An array of error messages, if any.
-Tüm kişileri getirir.
 
-**Yanıt:**
+**Response:**
 ```json
 {
 	"data":  [
